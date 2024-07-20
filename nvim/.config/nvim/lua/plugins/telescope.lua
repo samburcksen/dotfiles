@@ -6,7 +6,17 @@ return {
     },
 
     config = function()
+        local telescope = require('telescope')
         local builtin = require('telescope.builtin')
+
+        telescope.setup {
+            pickers = {
+                find_files = {
+                    hidden = true
+                }
+            }
+        }
+
         vim.keymap.set('n', '<leader>ff', builtin.find_files, {
             desc = 'Telescope'
         })
