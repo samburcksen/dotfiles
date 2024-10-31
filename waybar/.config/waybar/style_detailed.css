@@ -40,6 +40,7 @@ window#waybar {
 
 #network {
     font-size: 1.1rem;
+    margin-right: -4px;
     color: darkgrey;
 }
 
@@ -50,7 +51,7 @@ window#waybar {
 }
 
 #custom-pacman {
-    color: darkgrey;
+    color: forestgreen;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
@@ -85,6 +86,10 @@ window#waybar {
 }
 
 #wireplumber {
+    color: darkgrey;
+}
+
+#custom-power {
     color: darkgrey;
 }
 
