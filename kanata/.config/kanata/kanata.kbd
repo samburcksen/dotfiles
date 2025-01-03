@@ -1,6 +1,6 @@
 (defvar
-  tap-timeout   200
-  hold-timeout  200
+  tap-timeout   150 
+  hold-timeout  150
   tt            $tap-timeout
   ht            $hold-timeout
 )
@@ -47,26 +47,26 @@
 )
 
 (defalias
-  t_sft (tap-hold-press $tt $ht t lsft)
-  n_sft (tap-hold-press $tt $ht n rsft)
-  f_sft (tap-hold-press $tt $ht f lsft)
-  j_sft (tap-hold-press $tt $ht j rsft)
+  t_sft (tap-hold $tt $ht t lsft)
+  n_sft (tap-hold $tt $ht n rsft)
+  f_sft (tap-hold $tt $ht f lsft)
+  j_sft (tap-hold $tt $ht j rsft)
 
-  s_ctl (tap-hold-press $tt $ht s lctl)
-  e_ctl (tap-hold-press $tt $ht e rctl)
-  d_ctl (tap-hold-press $tt $ht d lctl)
-  k_ctl (tap-hold-press $tt $ht k rctl)
+  s_ctl (tap-hold $tt $ht s lctl)
+  e_ctl (tap-hold $tt $ht e rctl)
+  d_ctl (tap-hold $tt $ht d lctl)
+  k_ctl (tap-hold $tt $ht k rctl)
 
-  r_alt (tap-hold-press $tt $ht r lalt)
-  i_alt (tap-hold-press $tt $ht i ralt)
-  s_alt (tap-hold-press $tt $ht s lalt)
-  l_alt (tap-hold-press $tt $ht l ralt)
+  r_alt (tap-hold $tt $ht r lalt)
+  i_alt (tap-hold $tt $ht i ralt)
+  s_alt (tap-hold $tt $ht s lalt)
+  l_alt (tap-hold $tt $ht l ralt)
 
-  a_met (tap-hold-press $tt $ht a lmet)
-  o_met (tap-hold-press $tt $ht o rmet)
-  ;_met (tap-hold-press $tt $ht ; rmet)
+  a_met (tap-hold $tt $ht a lmet)
+  o_met (tap-hold $tt $ht o rmet)
+  ;_met (tap-hold $tt $ht ; rmet)
 
-  lalt (tap-hold-press $tt $ht lalt (layer-toggle movement))
-  caps (tap-hold-press $tt $ht caps (layer-toggle number))
+  lalt (tap-hold $tt $ht lalt (layer-toggle movement))
+  caps (tap-hold $tt $ht caps (layer-toggle number))
 )
 
