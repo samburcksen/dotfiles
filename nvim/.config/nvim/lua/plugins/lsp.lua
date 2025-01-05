@@ -32,7 +32,8 @@ return {
         require('mason-lspconfig').setup({
             ensure_installed = {
                 'rust_analyzer',
-                'lua_ls'
+                'lua_ls',
+                'clangd',
             },
             handlers = {
                 function(server_name)
@@ -49,7 +50,17 @@ return {
                             }
                         },
                     })
-                end
+                end,
+
+                clangd = function()
+                    require('lspconfig').clangd.setup({
+                        cmd = {
+                            "clangd",
+                            "--fallback-style=webkit"
+                        }
+                    })
+                end,
+
             }
         })
 
