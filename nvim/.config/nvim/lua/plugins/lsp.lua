@@ -1,10 +1,29 @@
+local lsp_servers = {
+    'lua_ls',
+    'rust_analyzer',
+    'clangd'
+}
+
+local lua_ls_config = {
+    settings = {
+        Lua = {
+            diagnostics = { globals = { 'vim' } },
+        }
+    }
+}
+
+local clangd_config = {
+    cmd = {
+        "clangd",
+        "--fallback-style=webkit"
+    }
+
+}
+
 return {
     'VonHeikemen/lsp-zero.nvim',
 
     dependencies = {
-        { 'williamboman/mason.nvim' },
-        { 'williamboman/mason-lspconfig.nvim' },
-
         { 'neovim/nvim-lspconfig' },
         { 'hrsh7th/nvim-cmp' },
         { 'hrsh7th/cmp-nvim-lsp' },
@@ -13,6 +32,12 @@ return {
 
     config = function()
         local lsp_zero = require('lsp-zero')
+
+        lsp_zero.configure('lua_ls', lua_ls_config)
+        lsp_zero.configure('clangd', clangd_config)
+
+        lsp_zero.setup_servers(lsp_servers)
+
         lsp_zero.on_attach(function(client, bufnr)
             -- see :help lsp-zero-keybindings
             -- to learn the available actions
@@ -27,42 +52,7 @@ return {
             end, { buffer = bufnr, desc = "Auto-Format" })
         end)
 
-        -- Lsp configuration
-        require('mason').setup({})
-        require('mason-lspconfig').setup({
-            ensure_installed = {
-                'rust_analyzer',
-                'lua_ls',
-                'clangd',
-            },
-            handlers = {
-                function(server_name)
-                    require('lspconfig')[server_name].setup({})
-                end,
-
-                lua_ls = function()
-                    require('lspconfig').lua_ls.setup({
-                        settings = {
-                            Lua = {
-                                diagnostics = {
-                                    globals = { 'vim' }
-                                }
-                            }
-                        },
-                    })
-                end,
-
-                clangd = function()
-                    require('lspconfig').clangd.setup({
-                        cmd = {
-                            "clangd",
-                            "--fallback-style=webkit"
-                        }
-                    })
-                end,
-
-            }
-        })
+        lsp_zero.setup()
 
         -- Autocompletion
         local cmp = require('cmp')
