@@ -1,7 +1,8 @@
 local lsp_servers = {
     'lua_ls',
     'rust_analyzer',
-    'clangd'
+    'clangd',
+    'nil_ls',
 }
 
 local lua_ls_config = {
