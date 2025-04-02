@@ -6,6 +6,8 @@
     ./fonts.nix
     ./fish.nix
     ./git.nix
+    ./ghostty.nix
+    ./gtk.nix
   ];
 
   home.username = "sburcksen";
