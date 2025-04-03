@@ -16,9 +16,9 @@
 (deflayer colemak-dh
     grv     1       2       3       4       5       6       7       8       9       0       -       =       bspc
     tab     q       w       f       p       b       j       l       u       y       ;       [       ]       \
-    caps   @a_met  @r_alt  @s_ctl  @t_sft  g       m       @n_sft  @e_ctl  @i_alt  @o_met  '       ret
+    caps    @a_met  @r_alt  @s_ctl  @t_sft  g       m       @n_sft  @e_ctl  @i_alt  @o_met  '       ret
     lsft    x       c       d       v       z       k       h       ,       .       /       rsft
-    lctl    @lmet   @lalt                   @spc                    @ralt    rmet    rctl
+    lctl    lmet    @lalt                   @spc                    @ralt    rmet    rctl
 )
 
 (deflayer movement
@@ -34,32 +34,24 @@
     _       _       _       _       _       _       _       _       _       _       _       _       _       _
     _       _       _       _       _       _       S-5     7       8       9       S-3     _       _       _
     _       _       _       _       _       _       +       4       5       6       -       _       _
-    _       _       _       _       _       _       _       1       2       3       S-2     _
+    _       _       _       _       _       _       S-8     1       2       3       S-2     _
     _       _       _                       0                       _       _       _
 )
 
 (deflayer symbol
     _       _       _       _       _       _       _       _       _       _       _       _       _       _
-    _       {       '       S-'     }       _       S-`     _       _       _       _       _       _       _
-    _       S-6     =       _       S-4     S-8     `       bspc    tab     spc     ret     _       _
-    _       [       S-7     S-\     ]       _       \       _       _       _       _       _
-    _       S-1     S-9                     S-0                     _       _       _
-)
-
-(deflayer function 
-    _       _       _       _       _       _       _       _       _       _       _       _       _       _
-    _       _       _       _       _       _       _       f7      f8      f9      f12     _       _       _
-    _       _       _       _       _       _       _       f4      f5      f6      f11     _       _
-    _       _       _       _       _       _       _       f1      f2      f3      f10     _
-    _       _       _                       _                       _       _       _
+    _       {       '       S-'     }       S-`     _       _       _       _       _       _       _       _
+    _       S-6     =       S--       S-4     `       _       _       _       _       _       _       _
+    _       [       S-7     S-\     ]       \       _       _       _       _       _       _
+    _       _       S-9                     S-0                     _       _       _
 )
 
 (deflayer qwerty
     grv     1       2       3       4       5       6       7       8       9       0       -       =       bspc
     tab     q       w       e       r       t       y       u       i       o       p       [       ]       \
-    caps   @a_met  @s_alt  @d_ctl  @f_sft  g       h       @j_sft  @k_ctl  @l_alt  @;_met  '       ret
+    caps    @a_met  @s_alt  @d_ctl  @f_sft  g       h       @j_sft  @k_ctl  @l_alt  @;_met  '       ret
     lsft    z       x       c       v       b       n       m       ,       .       /       rsft
-    lctl    @lmet   @lalt                   @spc                    ralt    rmet    rctl
+    lctl    lmet    @lalt                   @spc                    @ralt   rmet    rctl
 )
 
 (defalias
@@ -82,9 +74,8 @@
   o_met (tap-hold $tt $ht o rmet)
   ;_met (tap-hold $tt $ht ; rmet)
 
-  lalt (tap-hold $tt $ht lalt (layer-toggle movement))
-  ralt (tap-hold $tt $ht ralt (layer-toggle symbol))
-  spc  (tap-hold $tt $ht spc(layer-toggle number))
-  lmet (tap-hold $tt $ht lmet (layer-toggle function))
+  lalt (tap-hold $tt $ht bspc (layer-toggle movement))
+  ralt (tap-hold $tt $ht del (layer-toggle symbol))
+  spc  (tap-hold $tt $ht spc (layer-toggle number))
 )
 
