@@ -1,6 +1,14 @@
 { pkgs, ... }:
 
 {
+  home.pointerCursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Original-Ice";
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+  };
+
   gtk = {
     enable = true;
 
@@ -9,8 +17,5 @@
 
     iconTheme.package = pkgs.gruvbox-plus-icons;
     iconTheme.name = "Gruvbox-Plus-Dark";
-
-    cursorTheme.package = pkgs.bibata-cursors;
-    cursorTheme.name = "Bibata-Original-Classic";
   };
 }

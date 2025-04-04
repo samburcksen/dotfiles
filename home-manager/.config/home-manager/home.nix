@@ -7,7 +7,7 @@
     ./fish.nix
     ./git.nix
     ./ghostty.nix
-    ./gtk.nix
+    ./theme.nix
   ];
 
   home.username = "sburcksen";
