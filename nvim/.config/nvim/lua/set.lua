@@ -1,6 +1,3 @@
--- Fat cursor
-vim.opt.guicursor = ""
-
 -- Line number
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -39,3 +36,6 @@ vim.opt.updatetime = 500
 
 -- Vertical line
 vim.opt.colorcolumn = "80"
+
+-- Fat cursor
+vim.opt.guicursor = ""
