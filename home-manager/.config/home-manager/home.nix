@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -6,18 +6,18 @@
     ./fonts.nix
     ./fish.nix
     ./git.nix
-    ./ghostty.nix
+    ./terminal.nix
     ./theme.nix
+    ./desktop-packages.nix
   ];
 
   home.username = "sburcksen";
   home.homeDirectory = "/home/sburcksen";
 
-  home.packages = with pkgs; [
-    firefox
-  ];
-
-  home.file = {
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
   };
 
   # Let Home Manager install and manage itself.
